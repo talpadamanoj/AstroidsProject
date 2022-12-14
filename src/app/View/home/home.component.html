@@ -3,23 +3,29 @@
   <div class="col-md-5">
          <fieldset style="float:right ;">
         <label>Start Date :</label> 
-        <input type="date"  name="startdate" formControlName="startdate" min="2017-12-29" max="2018-01-31" required useValueAsDate>
+        <input type="date"  name="startdate" formControlName="startdate" value="{{ post.startdate | date:'yyyy-MM-dd' }}" required>
       </fieldset>
   </div>
   <div class="col-md-5">    
     <fieldset>
       <label>End Date :</label> 
-      <input type="date"  name="enddate" formControlName="enddate" min="2017-12-29" max="2018-01-31" required useValueAsDate>
+      <input type="date"  name="enddate" formControlName="enddate" value="{{ post.enddate | date:'yyyy-MM-dd' }}" required>
     </fieldset>  
   </div>
   <div class="col-md-2">
     <button type="submit" class="btn btn-sm btn-primary" (click)="Submit();"><i class="fa fa-dot-circle-o"></i> Submit</button>
   </div>
 </form>
+
 </div>
 <div class="chart-wrapper" style=" height: 50%; margin-top:40px; margin-left: 150px;margin-right: 150px;">
   <div class="chart-container">
     <canvas  id="MyChart" >{{ chart }}</canvas>
   </div>
 </div>
+
+<label for="html">Fastest Asteroid in km/h : {{fastAstroids}} </label><br>
+<label for="html">Average Size of the Asteroids : {{Averagekilimiterwise}} </label>
+
+
 
